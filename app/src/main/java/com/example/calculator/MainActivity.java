@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavSelect);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new Restaurant()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new Calculator()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavSelect = new BottomNavigationView.OnNavigationItemSelectedListener() {
