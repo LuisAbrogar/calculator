@@ -8,16 +8,34 @@
     >
     <!--display-->
     <TextView
-        android:id="@+id/cal_display"
+        android:id="@+id/cal_disp1"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="end"
+        android:text="@string/cal_disp1"
+        android:textColor="@color/gray_200"
+        android:textSize="30sp"
         />
+
+    <TextView
+        android:id="@+id/cal_disp2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/cal_disp1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="end"
+        android:text="@string/cal_disp2"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
     <!--numpad-->
     <LinearLayout
         android:id="@+id/cal_pad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cal_display"
+        android:layout_below="@+id/cal_disp2"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         >

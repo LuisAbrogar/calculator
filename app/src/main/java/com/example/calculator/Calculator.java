@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -25,6 +26,9 @@ public class Calculator extends Fragment {
     //display
     private TextView mainDisp, subDisp;
     private ForegroundColorSpan purple;
+    private CharSequence toastText;
+    private int toastDuration;
+    private Toast toast;
     //variables
     private double hold, helper;
     private String curr, op;
@@ -53,6 +57,9 @@ public class Calculator extends Fragment {
         subDisp = Objects.requireNonNull(getView()).findViewById(R.id.cal_disp1);
         if(context != null)
             purple = new ForegroundColorSpan(ContextCompat.getColor(context, R.color.purple_200));
+        toastText = "Cannot enter numbers with more than 10 digits";
+        toastDuration = Toast.LENGTH_SHORT;
+        toast = Toast.makeText(context, toastText, toastDuration);
         //numpad ------------------------------------------------------------
         //numbers
         v.findViewById(R.id.cal_button_0).setOnClickListener(CalcListener);
@@ -98,34 +105,64 @@ public class Calculator extends Fragment {
             }
             switch (v.getId()) {
                 case (R.id.cal_button_0):
-                    curr += "0";
+                    if(curr.length() <= 10)
+                        curr += "0";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_1):
-                    curr += "1";
+                    if(curr.length() <= 10)
+                        curr += "1";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_2):
-                    curr += "2";
+                    if(curr.length() <= 10)
+                        curr += "2";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_3):
-                    curr += "3";
+                    if(curr.length() <= 10)
+                        curr += "3";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_4):
-                    curr += "4";
+                    if(curr.length() <= 10)
+                        curr += "4";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_5):
-                    curr += "5";
+                    if(curr.length() <= 10)
+                        curr += "5";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_6):
-                    curr += "6";
+                    if(curr.length() <= 10)
+                        curr += "6";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_7):
-                    curr += "7";
+                    if(curr.length() <= 10)
+                        curr += "7";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_8):
-                    curr += "8";
+                    if(curr.length() <= 10)
+                        curr += "8";
+                    else
+                        warn();
                     break;
                 case (R.id.cal_button_9):
-                    curr += "9";
+                    if(curr.length() <= 10)
+                        curr += "9";
+                    else
+                        warn();
                     break;
                 case(R.id.cal_button_dot):
                     if(!decimal)
@@ -198,7 +235,7 @@ public class Calculator extends Fragment {
      */
     public void update() {
         if(!curr.equals(""))
-            mainDisp.setText(String.valueOf(curr));
+            mainDisp.setText(curr);
         else
             mainDisp.setText("0");
         if(hold != 0) {
@@ -220,6 +257,12 @@ public class Calculator extends Fragment {
             curr = "";
         }
         decimal = false;
+    }
+    /*
+    Helper function: prevents user from inputting more than 10 digits
+     */
+    public void warn() {
+        toast.show();
     }
 
 

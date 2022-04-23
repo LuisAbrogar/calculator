@@ -14,5 +14,13 @@
         <item name="colorOnPrimary">@color/white</item>
     </style>
 
+    <!-- calculator buttons -->
+    <style name="calButtons" parent="Widget.AppCompat.Button.Colored" >
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="colorButtonNormal">@color/gray_200</item>
+    </style>
+
 
 </resources>

@@ -1,8 +1,40 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <!-- bottom nav -->
     <string name="calculator">Calculator</string>
     <string name="restaurant">Restaurant</string>
     <string name="converter">Unit Converter</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- calculator -->
+    <string name="cal_disp1"></string>
+    <string name="cal_disp2">0</string>
+    <string name="cal_clr">C</string>
+    <string name="cal_sign">+/-</string>
+    <string name="cal_pct">%</string>
+    <string name="cal_div">/</string>
+    <string name="cal_mul">x</string>
+    <string name="cal_sub">-</string>
+    <string name="cal_add">+</string>
+    <string name="cal_dot">.</string>
+    <string name="cal_equ">=</string>
+    <string name="cal_0">0</string>
+    <string name="cal_1">1</string>
+    <string name="cal_2">2</string>
+    <string name="cal_3">3</string>
+    <string name="cal_4">4</string>
+    <string name="cal_5">5</string>
+    <string name="cal_6">6</string>
+    <string name="cal_7">7</string>
+    <string name="cal_8">8</string>
+    <string name="cal_9">9</string>
+    <!-- restaurant -->
+    <string name="rst_total">Total:</string>
+    <string name="rst_tax">Tax:</string>
+    <string name="rst_tip">Tip:</string>
+    <string name="rst_split">Split:</string>
+    <string name="rst_split_e">Even</string>
+    <string name="rst_split_u">Uneven</string>
+    <string name="rst_ppl"># People:</string>
+    <string name="rst_amt">$0</string>
+    <string name="rst_title">per person</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
