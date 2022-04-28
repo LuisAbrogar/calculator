@@ -1,58 +1,42 @@
 package com.example.calculator;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Converter#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Converter extends Fragment {
+import com.google.android.material.tabs.TabLayout;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import java.util.Objects;
 
+public class Converter extends Fragment implements AdapterView.OnItemSelectedListener {
+    private Resources res;
+    private TextView fromNum, fromUnit, toNum, toUnit;
+
+    Spinner fromSpin, toSpin;
+    ArrayAdapter<String> arrayAdapter;
+
+    //units for spinners
+    String[] curr, units;
     public Converter() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Converter.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Converter newInstance(String param1, String param2) {
-        Converter fragment = new Converter();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -60,5 +44,100 @@ public class Converter extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_converter, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View v, Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        res = getResources();
+        Context context = getContext();
+        //tabs
+        TabLayout tabLayout = Objects.requireNonNull(getView()).findViewById(R.id.con_tabs);
+        //textviews
+        fromNum = Objects.requireNonNull(getView()).findViewById(R.id.con_from_num);
+        fromUnit = Objects.requireNonNull(getView()).findViewById(R.id.con_from_unit);
+        toNum = Objects.requireNonNull(getView()).findViewById(R.id.con_to_num);
+        toUnit = Objects.requireNonNull(getView()).findViewById(R.id.con_to_unit);
+        //spinners
+        fromSpin = Objects.requireNonNull(getView()).findViewById(R.id.con_from_spin);
+        toSpin = Objects.requireNonNull(getView()).findViewById(R.id.con_to_spin);
+        fromSpin.setOnItemSelectedListener(this);
+        toSpin.setOnItemSelectedListener(this);
+        curr = res.getStringArray(R.array.con_arr_len);
+        units = res.getStringArray(R.array.con_arr_len_u);
+        changeSpinner(context, curr);
+
+        //listeners
+        //init first tab
+        tabLayout.getTabAt(0).select();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                 switch(tab.getPosition()) {
+                     case 0:    //length
+                         curr = res.getStringArray(R.array.con_arr_len);
+                         units = res.getStringArray(R.array.con_arr_len_u);
+                         changeSpinner(context, curr);
+                         break;
+                     case 1:    //mass
+                         curr = res.getStringArray(R.array.con_arr_mass);
+                         units = res.getStringArray(R.array.con_arr_mass_u);
+                         changeSpinner(context, curr);
+                         break;
+                     case 2:    //temperature
+                         curr = res.getStringArray(R.array.con_arr_temp);
+                         units = res.getStringArray(R.array.con_arr_temp_u);
+                         changeSpinner(context, curr);
+                         break;
+                     case 3:    //time
+                         curr = res.getStringArray(R.array.con_arr_time);
+                         units = res.getStringArray(R.array.con_arr_time_u);
+                         changeSpinner(context, curr);
+                         break;
+                     case 4:    //speed
+                         curr = res.getStringArray(R.array.con_arr_speed);
+                         units = res.getStringArray(R.array.con_arr_speed_u);
+                         changeSpinner(context, curr);
+                         break;
+                 }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        
+
+    }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        switch(parent.getId()) {
+            case(R.id.con_from_spin): //from
+                fromUnit.setText(units[position]);
+                break;
+            case(R.id.con_to_spin): //to
+                toUnit.setText(units[position]);
+                break;
+        }
+        
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public void changeSpinner(Context context, String[] arr) {
+        arrayAdapter = new ArrayAdapter<>(context, R.layout.spinner_item, arr);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        fromSpin.setAdapter(arrayAdapter);
+        toSpin.setAdapter(arrayAdapter);
     }
 }

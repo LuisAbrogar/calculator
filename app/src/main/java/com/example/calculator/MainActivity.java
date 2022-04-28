@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 case(R.id.restaurant):
                     fragment = new Restaurant();
                     break;
-
                 case(R.id.calculator):
                     fragment = new Calculator();
                     break;

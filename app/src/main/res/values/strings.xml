@@ -36,5 +36,91 @@
     <string name="rst_ppl"># People:</string>
     <string name="rst_amt">$0</string>
     <string name="rst_title">per person</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- converter -->
+    <string name="con_len">Length</string>
+    <string name="con_temp">Temp</string>
+    <string name="con_mass">Mass</string>
+    <string name="con_time">Time</string>
+    <string name="con_speed">Speed</string>
+    <string name="con_data">Data</string>
+    <string name="con_from">From:</string>
+    <string name="con_to">To:</string>
+    <string-array name="con_arr_len">
+        <item>Millimeters (mm)</item>
+        <item>Centimeters (cm)</item>
+        <item>Meters (m)</item>
+        <item>Kilometers (km)</item>
+        <item>Inches (in)</item>
+        <item>Feet (ft)</item>
+        <item>Yards (yd)</item>
+        <item>Miles (mi)</item>
+    </string-array>
+    <string-array name="con_arr_len_u">
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>in</item>
+        <item>ft</item>
+        <item>yd</item>
+        <item>mi</item>
+    </string-array>
+    <string-array name="con_arr_mass">
+        <item>Pounds (lb)</item>
+        <item>Ounces (oz)</item>
+        <item>Grams (g)</item>
+        <item>Kilograms (kg)</item>
+        <item>Tons (t)</item>
+    </string-array>
+    <string-array name="con_arr_mass_u">
+        <item>lb</item>
+        <item>oz</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>t</item>
+    </string-array>
+    <string-array name="con_arr_temp">
+        <item>Celsius (\u00B0C)</item>
+        <item>Fahrenheit (\u00B0F)</item>
+        <item>Kelvin (K)</item>
+    </string-array>
+    <string-array name="con_arr_temp_u">
+        <item>\u00B0C</item>
+        <item>\u00B0F</item>
+        <item>K</item>
+    </string-array>
+    <string-array name="con_arr_time">
+        <item>Milliseconds (ms)</item>
+        <item>Seconds (s)</item>
+        <item>Minutes (min)</item>
+        <item>Hours (h)</item>
+        <item>Days (d)</item>
+        <item>Weeks (wk)</item>
+    </string-array>
+    <string-array name="con_arr_time_u">
+        <item>ms</item>
+        <item>s</item>
+        <item>min</item>
+        <item>h</item>
+        <item>d</item>
+        <item>wk</item>
+    </string-array>
+    <string-array name="con_arr_speed">
+        <item>Meters per sec (m/s)</item>
+        <item>Meters per hr (m/h)</item>
+        <item>Kilometers per sec (km/s)</item>
+        <item>Kilometers per hr (km/h)</item>
+        <item>Miles per sec (mi/s)</item>
+        <item>Miles per hr (mi/h)</item>
+    </string-array>
+    <string-array name="con_arr_speed_u">
+        <item>m/s</item>
+        <item>m/h</item>
+        <item>km/s</item>
+        <item>km/h</item>
+        <item>mi/s</item>
+        <item>mi/h</item>
+    </string-array>
+
 </resources>

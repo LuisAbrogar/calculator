@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.258" />
+        <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.196" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/ic_baseline_attach_money_24.xml" value="0.3675" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.258" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/ic_baseline_percent_24.xml" value="0.3675" />
@@ -12,10 +13,12 @@
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/ic_button.xml" value="0.258" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.258" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/inputbox.xml" value="0.3675" />
+        <entry key="..\:/Projects/Calculator/app/src/main/res/drawable/spinner_bg.xml" value="0.3675" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/layout/fragment_calculator.xml" value="0.33" />
-        <entry key="..\:/Projects/Calculator/app/src/main/res/layout/fragment_converter.xml" value="0.2526041666666667" />
+        <entry key="..\:/Projects/Calculator/app/src/main/res/layout/fragment_converter.xml" value="0.2" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/layout/fragment_restaurant.xml" value="0.25" />
+        <entry key="..\:/Projects/Calculator/app/src/main/res/layout/spinner_item.xml" value="0.3009833262077811" />
         <entry key="..\:/Projects/Calculator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2526041666666667" />
       </map>
     </option>
