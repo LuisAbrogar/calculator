@@ -71,7 +71,7 @@
         <item>Ounces (oz)</item>
         <item>Grams (g)</item>
         <item>Kilograms (kg)</item>
-        <item>Tons (t)</item>
+        <item>Metric Tons (t)</item>
     </string-array>
     <string-array name="con_arr_mass_u">
         <item>lb</item>
@@ -108,19 +108,17 @@
     </string-array>
     <string-array name="con_arr_speed">
         <item>Meters per sec (m/s)</item>
-        <item>Meters per hr (m/h)</item>
-        <item>Kilometers per sec (km/s)</item>
+        <item>Feet per sec (ft/s)</item>
         <item>Kilometers per hr (km/h)</item>
-        <item>Miles per sec (mi/s)</item>
         <item>Miles per hr (mi/h)</item>
+        <item>Knot (kt)</item>
     </string-array>
     <string-array name="con_arr_speed_u">
         <item>m/s</item>
-        <item>m/h</item>
-        <item>km/s</item>
+        <item>ft/s</item>
         <item>km/h</item>
-        <item>mi/s</item>
         <item>mi/h</item>
+        <item>kt</item>
     </string-array>
 
 </resources>
